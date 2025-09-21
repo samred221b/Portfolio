@@ -128,6 +128,25 @@
       }
     }
 
+
+.scroll-arrow {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 2rem;
+  color: var(--accent);
+  text-decoration: none;
+  animation: bounce 1.5s infinite;
+  transition: transform 0.3s, color 0.3s;
+}
+.scroll-arrow:hover {
+  transform: scale(1.3);
+  color: #000;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
 </style>
 </head>
 <body>
@@ -165,8 +184,8 @@
           I enjoy building scalable systems and transforming data into meaningful insights while delivering modern digital solutions.
         </p>
         <div style="display:flex;gap:14px;align-items:center">
-          <a class="btn" href="#projects">View Projects</a>
-          <a class="btn" href="#contact" style="background:transparent;border:1px solid rgba(0,0,0,0.1);color:var(--text)">Hire Me</a>
+          
+          
         </div>
       </div>
 
@@ -399,8 +418,8 @@
   </main>
 
   <script>
-    // Smooth scroll for header nav
-    document.querySelectorAll('nav a').forEach(a=>{
+    // Smooth scroll for header nav and hero button
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         e.preventDefault();
         document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
@@ -411,5 +430,7 @@
       alert('Thanks — message functionality is a placeholder in this demo.');
     });
   </script>
+
+
 </body>
 </html>
