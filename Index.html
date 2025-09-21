@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Samuel Alemayehu — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{
+      --primary-grad: linear-gradient(135deg,#0ea5e9 0%,#2563eb 45%,#7c3aed 100%);
+      --card-grad: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      --surface: rgba(255,255,255,0.03);
+      --glass: rgba(255,255,255,0.04);
+      --text: #e6eef8;
+      --muted: #9fb3d6;
+      --accent: #14b8a6;
+      --bg: #061021;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(2,6,23,0.6);
+      --glass-border: 1px solid rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;}
+    html,body{height:100%;background:linear-gradient(180deg,#041426 0%, #071b2e 50%, #081526 100%);color:var(--text);-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none}
+    header{position:fixed;left:0;right:0;top:18px;display:flex;justify-content:center;z-index:40;pointer-events:none;}
+    .nav-wrap{width:1100px;max-width:94%;display:flex;justify-content:space-between;align-items:center;pointer-events:auto;}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:44px;height:44px;border-radius:10px;background:var(--primary-grad);box-shadow:0 6px 18px rgba(124,58,237,0.18);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;}
+    .logo h4{font-family:'Roboto Slab',serif;font-size:1.02rem;letter-spacing:0.2px}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:600;transition:all .22s}
+    nav a:hover{background:rgba(255,255,255,0.03);color:var(--text);transform:translateY(-3px)}
+    .cta-btn{background:var(--primary-grad);padding:10px 16px;border-radius:12px;color:white;font-weight:700;box-shadow:var(--shadow);}
+    main{padding-top:120px;}
+    /* Hero */
+    .hero{min-height:92vh;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;width:1100px;max-width:94%;margin:0 auto;position:relative;overflow:visible;margin-bottom:20px;}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:18px;padding:36px;box-shadow:var(--shadow);border:var(--glass-border);backdrop-filter:blur(8px)}
+    .hero h1{font-family:'Roboto Slab',serif;font-size:3.2rem;margin-bottom:8px;color:var(--text);line-height:1}
+    .hero .lead{color:var(--muted);margin-bottom:20px;font-size:1.05rem}
+    .hero .pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+    .pill{background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600;border:1px solid rgba(255,255,255,0.03)}
+    .hero-graphic{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px;justify-content:center}
+    .avatar {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+    .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+    .hero-stats{display:flex;gap:12px;margin-top:6px}
+    .stat{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px 12px;border-radius:12px;color:var(--muted);font-weight:700;border:1px solid rgba(255,255,255,0.03)}
+    /* sections */
+    section{padding:80px 0;}
+    .container{width:1100px;max-width:94%;margin:0 auto}
+    h2.section-title{font-family:'Roboto Slab',serif;font-size:1.6rem;margin-bottom:18px;color:var(--text);display:flex;align-items:center;gap:12px}
+    .subtitle{color:var(--muted);font-size:0.98rem;margin-bottom:18px}
+    /* two-column grid */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .card{background:var(--surface);border-radius:12px;padding:18px;border:var(--glass-border);box-shadow:0 8px 30px rgba(3,8,23,0.5)}
+    .card h3{margin-bottom:8px}
+    .skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .skill{padding:10px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);text-align:center;font-weight:700;color:var(--muted)}
+    /* Experience timeline */
+    .timeline{position:relative;padding-left:28px}
+    .timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#2563eb,#7c3aed);border-radius:4px}
+    .timeline-item{position:relative;margin-bottom:28px;padding-left:18px}
+    .timeline-item .dot{position:absolute;left:-8px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--primary-grad);box-shadow:0 6px 18px rgba(124,58,237,0.18);border:3px solid #061021}
+    .timeline-item h4{color:var(--text);margin-bottom:6px}
+    .timeline-item p{color:var(--muted);margin-bottom:6px}
+    .tools{color:var(--muted);font-size:0.95rem}
+    /* Projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{border-radius:12px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:var(--glass-border);transition:transform .28s, box-shadow .28s}
+    .project:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(2,6,23,0.6)}
+    .project h4{margin-bottom:8px;color:var(--text)}
+    /* contact */
+    .contact-card{padding:28px;border-radius:14px;background:var(--card-grad);display:flex;flex-direction:column;gap:12px;border:var(--glass-border);}
+    .input, textarea{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);padding:12px;border-radius:10px;color:var(--text);outline:none}
+    .btn{background:var(--primary-grad);padding:12px 16px;border-radius:10px;color:white;font-weight:700;border:none;cursor:pointer}
+    footer{padding:28px 0;text-align:center;color:var(--muted);opacity:0.95}
+    /* responsive */
+    @media (max-width:1000px){.hero{grid-template-columns:1fr;}.grid-3{grid-template-columns:repeat(2,1fr)}.skill-grid{grid-template-columns:repeat(2,1fr)}.projects-grid{grid-template-columns:repeat(2,1fr)}header{top:12px}}
+    @media (max-width:700px){.grid-3{grid-template-columns:1fr}.hero{padding:18px}.avatar {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}nav{display:none}}
+    /* subtle animated blobs */
+    .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:0.45;mix-blend-mode:screen;transform:translateZ(0);}
+    .blob.b1{width:420px;height:420px;background:linear-gradient(135deg,#0ea5e9,#7c3aed);left:-120px;top:-60px}
+    .blob.b2{width:320px;height:320px;background:linear-gradient(135deg,#06b6d4,#7c3aed);right:-80px;bottom:-60px}
+    /* small utilities */
+    .muted{color:var(--muted)}
+    .flex{display:flex;gap:12px;align-items:center}
+  
+    @media (max-width: 900px) {
+      .hero.container {
+        flex-direction: column !important;
+        text-align: center;
+      }
+      .hero.container .hero-graphic {
+        order: -1;
+        margin-bottom: 20px;
+      }
+      .hero.container .hero-card {
+        align-items: center;
+      }
+      .hero.container .hero-card p {
+        max-width: 100%;
+      }
+    }
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <div class="logo">
+        <div class="mark">SA</div>
+        <h4>Samuel Alemayehu</h4>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a class="cta-btn" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="blob b1" aria-hidden="true"></div>
+  <div class="blob b2" aria-hidden="true"></div>
+
+  <main>
+    
+    
+    
+    <section class="hero container" id="home" style="display:flex;align-items:center;gap:40px">
+      <div class="hero-card" style="flex:1;display:flex;flex-direction:column;justify-content:center">
+        <h1 style="font-size:3.2rem;font-weight:800;color:var(--text);margin-bottom:10px">Samuel <span style="color:var(--accent)">Alemayehu</span></h1>
+        <h2 style="font-size:1.4rem;font-weight:700;background:var(--primary-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px">
+          Computer Science · Data Science · AI Enthusiast
+        </h2>
+        <p class="muted" style="font-size:1.05rem;line-height:1.8;margin-bottom:20px">
+          Passionate IT professional with strong skills in <strong>software development</strong>, <strong>data analysis</strong>, and <strong>artificial intelligence</strong>. 
+          I enjoy building scalable systems and transforming data into meaningful insights while delivering modern digital solutions.
+        </p>
+        <div style="display:flex;gap:14px;align-items:center">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn" href="#contact" style="background:transparent;border:1px solid rgba(0,0,0,0.1);color:var(--text)">Hire Me</a>
+        </div>
+      </div>
+
+      <div class="hero-graphic" style="flex:1;display:flex;justify-content:center">
+        <div class="avatar card">
+          <img src="img/Samuel.jpg" alt="Samuel Alemayehu">
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section id="about" class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Who I Am</h3>
+          <p class="muted">I combine a robust computer science background with practical experience in software engineering, data analytics, and systems administration. I focus on transforming data into actionable products, building resilient applications, and automating workflows to save time and reduce error.</p>
+          <div style="margin-top:12px" class="flex">
+            <div class="muted"><i class="fas fa-check-circle"></i> Problem Solving</div>
+            <div class="muted"><i class="fas fa-check-circle"></i> Scalable Systems</div>
+            <div class="muted"><i class="fas fa-check-circle"></i> Clean Code</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Tools & Technologies</h3>
+          <div style="margin-top:12px" class="skill-grid">
+            <div class="skill">Python</div><div class="skill">TensorFlow</div><div class="skill">PyTorch</div><div class="skill">Pandas</div>
+            <div class="skill">Scikit-Learn</div><div class="skill">SQL</div><div class="skill">Docker</div><div class="skill">Linux</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    
+    <section id="skills" class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="card" style="padding:20px">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+          
+          <div>
+            <h4 style="margin-bottom:12px;text-align:center">Programming & Development</h4>
+            <div class="skill-grid" style="grid-template-columns:repeat(2,1fr)">
+              <div class="skill">JavaScript</div>
+              <div class="skill">HTML & CSS</div>
+              <div class="skill">PHP</div>
+              <div class="skill">C# / C++</div>
+              <div class="skill">React</div>
+              <div class="skill">ASP.NET</div>
+            </div>
+          </div>
+
+          <div>
+            <h4 style="margin-bottom:12px;text-align:center">Data Science & AI</h4>
+            <div class="skill-grid" style="grid-template-columns:repeat(2,1fr)">
+              <div class="skill">Data Analysis</div>
+              <div class="skill">Machine Learning</div>
+              <div class="skill">Deep Learning</div>
+              <div class="skill">NLP</div>
+              <div class="skill">Computer Vision</div>
+              <div class="skill">TensorFlow / PyTorch</div>
+            </div>
+          </div>
+
+          <div>
+            <h4 style="margin-bottom:12px;text-align:center">Systems & Administration</h4>
+            <div class="skill-grid" style="grid-template-columns:repeat(2,1fr)">
+              <div class="skill">System Administration</div>
+              <div class="skill">Project Management</div>
+              <div class="skill">Networking</div>
+              <div class="skill">Linux / Windows Server</div>
+              <div class="skill">Communication</div>
+              <div class="skill">Research</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    
+    <section id="experience" class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h4>📊 Data Analyst — Insights & Visualization</h4>
+          <p class="muted">Performed exploratory data analysis (EDA) on large datasets to extract actionable insights; built interactive dashboards and reports.</p>
+          <div class="tools muted">Python, Pandas, Matplotlib, Seaborn, Plotly, SQL</div>
+        </div>
+        <div class="card">
+          <h4>📈 Data Visualization Developer</h4>
+          <p class="muted">Designed dashboards and reports for operational and executive audiences; transformed complex data into clear visual narratives.</p>
+          <div class="tools muted">Power BI, Tableau, D3.js, Plotly Dash</div>
+        </div>
+        <div class="card">
+          <h4>💻 Full-Stack Developer</h4>
+          <p class="muted">Developed front-end and back-end applications; delivered responsive and scalable web solutions.</p>
+          <div class="tools muted">ASP.NET, React, JavaScript, PHP</div>
+        </div>
+        <div class="card">
+          <h4>🔄 Website Migration Engineer</h4>
+          <p class="muted">Migrated an existing website from SQL Membership to ASP.NET; improved authentication and security.</p>
+          <div class="tools muted">SQL, ASP.NET, IIS</div>
+        </div>
+        <div class="card">
+          <h4>🤖 Automation & Bot Developer</h4>
+          <p class="muted">Built automated Telegram bots and scripts to streamline workflows and enhance engagement.</p>
+          <div class="tools muted">Python, Telegram API</div>
+        </div>
+        <div class="card">
+          <h4>🎨 Web & Graphics Designer</h4>
+          <p class="muted">Designed and deployed websites and branding assets for organizations and individuals.</p>
+          <div class="tools muted">Figma, HTML/CSS, Illustrator</div>
+        </div>
+        <div class="card">
+          <h4>⚙️ Systems Administrator</h4>
+          <p class="muted">Configured and maintained servers, networks, and IT infrastructure to ensure security and uptime.</p>
+          <div class="tools muted">Linux, Windows Server, Docker</div>
+        </div>
+        <div class="card">
+          <h4>🛠️ IT Operations & Management</h4>
+          <p class="muted">Handled user accounts, backups, monitoring, and team coordination for smooth IT operations.</p>
+          <div class="tools muted">Nagios, Prometheus, Jira</div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="projects" class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <h4>Automated Telegram Bot</h4>
+          <p class="muted">Built an automated Telegram bot to handle user requests and task scheduling using Python.</p>
+        </div>
+        <div class="project">
+          <h4>Portfolio Website</h4>
+          <p class="muted">Designed and developed responsive personal portfolio showcasing skills, projects and contact methods.</p>
+        </div>
+        <div class="project">
+          <h4>Data Analysis Dashboard</h4>
+          <p class="muted">Developed Python-based scripts and dashboards to analyze and visualize business datasets.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="container">
+      <h2 class="section-title">Certifications</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h4>DOT Ethiopia</h4>
+          <p class="muted">Training in Entrepreneurial Mindset, Communication, Teamwork, Decision-Making, and Digital Skills</p>
+        </div>
+        <div class="card">
+          <h4>Fundamentals of Data Science</h4>
+          <p class="muted">Data Science and Data Analysis fundamentals covering Python and statistical methods</p>
+        </div>
+        <div class="card">
+          <h4>Fundamentals of Artificial Intelligence — Udacity</h4>
+          <p class="muted">Introductory coursework in AI concepts and machine learning basics</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="languages" class="container">
+      <h2 class="section-title">Languages</h2>
+      <div class="card grid-3" style="padding:18px;align-items:center">
+        <div>
+          <h4>Amharic</h4>
+          <p class="muted">Native</p>
+        </div>
+        <div>
+          <h4>English</h4>
+          <p class="muted">Fluent</p>
+        </div>
+        <div>
+          <h4>Technical</h4>
+          <p class="muted">Documentation, Reports, Presentations</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h4>Bachelor of Science in Computer Science (2016 – 2020)</h4>
+          <p class="muted">Admas University, Addis Ababa</p>
+        </div>
+        <div class="card">
+          <h4>Bole Senior Secondary School (2013 – 2015)</h4>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="grid-2">
+        <div class="contact-card">
+          <h4>Send a message</h4>
+          <p class="muted">I’m open to new opportunities and collaborations. Drop a message and I’ll reply as soon as possible.</p>
+          <input class="input" placeholder="Your name" />
+          <input class="input" placeholder="Your email" />
+          <textarea class="input" placeholder="Your message" rows="5"></textarea>
+          <div style="display:flex;gap:10px;margin-top:8px">
+            <button class="btn">Send Message</button>
+            <button class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06)">Download CV</button>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Contact details</h4>
+          <div style="margin-top:12px" class="muted flex"><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</div>
+          <div style="margin-top:8px" class="muted flex"><i class="fas fa-phone"></i> +251 904 577804</div>
+          <div style="margin-top:8px" class="muted flex"><i class="fas fa-envelope"></i> samred221b@gmail.com</div>
+          <div style="margin-top:12px" class="flex">
+            <a class="muted" href="https://github.com" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a class="muted" href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Samuel Alemayehu
+    </footer>
+  </main>
+
+  <script>
+    // Smooth scroll for header nav
+    document.querySelectorAll('nav a').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+      });
+    });
+    // Simple send button alert (placeholder for real form handling)
+    document.querySelector('.btn').addEventListener('click', ()=>{
+      alert('Thanks — message functionality is a placeholder in this demo.');
+    });
+  </script>
+</body>
+</html>
