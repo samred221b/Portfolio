@@ -1,14 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
+  
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Samuel Alemayehu — Portfolio</title>
+
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    :root{
-      --primary-grad: linear-gradient(135deg,#0ea5e9 0%,#2563eb 45%,#7c3aed 100%);
+    /* ===============================
+       Global Styles & Variables
+    ================================ */
+    :root {
+      --primary-grad: linear-gradient(135deg, #0ea5e9 0%, #2563eb 45%, #7c3aed 100%);
       --card-grad: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
       --surface: rgba(255,255,255,0.03);
       --glass: rgba(255,255,255,0.04);
@@ -20,136 +27,430 @@
       --shadow: 0 10px 30px rgba(2,6,23,0.6);
       --glass-border: 1px solid rgba(255,255,255,0.06);
     }
-    *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;}
-    html,body{height:100%;background:linear-gradient(180deg,#041426 0%, #071b2e 50%, #081526 100%);color:var(--text);-webkit-font-smoothing:antialiased;}
-    a{color:inherit;text-decoration:none}
-    header{position:fixed;left:0;right:0;top:18px;display:flex;justify-content:center;z-index:40;pointer-events:none;}
-    .nav-wrap{width:1100px;max-width:94%;display:flex;justify-content:space-between;align-items:center;pointer-events:auto;}
-    .logo{display:flex;align-items:center;gap:12px}
-    .logo .mark{width:44px;height:44px;border-radius:10px;background:var(--primary-grad);box-shadow:0 6px 18px rgba(124,58,237,0.18);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;}
-    .logo h4{font-family:'Roboto Slab',serif;font-size:1.02rem;letter-spacing:0.2px}
-    nav{display:flex;gap:18px;align-items:center}
-    nav a{padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:600;transition:all .22s}
-    nav a:hover{background:rgba(255,255,255,0.03);color:var(--text);transform:translateY(-3px)}
-    .cta-btn{background:var(--primary-grad);padding:10px 16px;border-radius:12px;color:white;font-weight:700;box-shadow:var(--shadow);}
-    main{padding-top:120px;}
-    /* Hero */
-    .hero{min-height:92vh;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;width:1100px;max-width:94%;margin:0 auto;position:relative;overflow:visible;margin-bottom:20px;}
-    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:18px;padding:36px;box-shadow:var(--shadow);border:var(--glass-border);backdrop-filter:blur(8px)}
-    .hero h1{font-family:'Roboto Slab',serif;font-size:3.2rem;margin-bottom:8px;color:var(--text);line-height:1}
-    .hero .lead{color:var(--muted);margin-bottom:20px;font-size:1.05rem}
-    .hero .pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
-    .pill{background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600;border:1px solid rgba(255,255,255,0.03)}
-    .hero-graphic{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px;justify-content:center}
+    
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    html, body {
+      height: 100%;
+      background: linear-gradient(180deg, #041426 0%, #071b2e 50%, #081526 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+    
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===============================
+       Header & Navigation
+    ================================ */
+    header {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 18px;
+      display: flex;
+      justify-content: center;
+      z-index: 40;
+      pointer-events: none;
+    }
+
+    .nav-wrap {
+      width: 1100px;
+      max-width: 94%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo .mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--primary-grad);
+      box-shadow: 0 6px 18px rgba(124,58,237,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+    }
+
+    .logo h4 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.02rem;
+      letter-spacing: 0.2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    nav a {
+      padding: 8px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      font-weight: 600;
+      transition: all 0.22s;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      transform: translateY(-3px);
+    }
+
+    .cta-btn {
+      background: var(--primary-grad);
+      padding: 10px 16px;
+      border-radius: 12px;
+      color: white;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    /* ===============================
+       Hero Section
+    ================================ */
+    main {
+      padding-top: 120px;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      width: 1100px;
+      max-width: 94%;
+      margin: 0 auto 20px auto;
+    }
+
+    .hero-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero h1 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 3.2rem;
+      margin-bottom: 8px;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .hero-graphic {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .avatar {
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid var(--accent);
-  box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--accent);
+      box-shadow: 0 0 25px rgba(14,165,233,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* ===============================
+       Sections & Grids
+    ================================ */
+    section {
+      padding: 80px 0;
+    }
+
+    .container {
+      width: 1100px;
+      max-width: 94%;
+      margin: 0 auto;
+    }
+
+    h2.section-title {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 18px;
+      border: var(--glass-border);
+      box-shadow: 0 8px 30px rgba(3,8,23,0.5);
+    }
+
+    .card h3,
+    .card h4 {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    /* ===============================
+       Skills
+    ================================ */
+    /* Skills Section Redesign */
+#skills .grid-3 {
+  gap: 28px;
 }
-    .hero-stats{display:flex;gap:12px;margin-top:6px}
-    .stat{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px 12px;border-radius:12px;color:var(--muted);font-weight:700;border:1px solid rgba(255,255,255,0.03)}
-    /* sections */
-    section{padding:80px 0;}
-    .container{width:1100px;max-width:94%;margin:0 auto}
-    h2.section-title{font-family:'Roboto Slab',serif;font-size:1.6rem;margin-bottom:18px;color:var(--text);display:flex;align-items:center;gap:12px}
-    .subtitle{color:var(--muted);font-size:0.98rem;margin-bottom:18px}
-    /* two-column grid */
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .card{background:var(--surface);border-radius:12px;padding:18px;border:var(--glass-border);box-shadow:0 8px 30px rgba(3,8,23,0.5)}
-    .card h3{margin-bottom:8px}
-    .skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .skill{padding:10px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);text-align:center;font-weight:700;color:var(--muted)}
-    /* Experience timeline */
-    .timeline{position:relative;padding-left:28px}
-    .timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#2563eb,#7c3aed);border-radius:4px}
-    .timeline-item{position:relative;margin-bottom:28px;padding-left:18px}
-    .timeline-item .dot{position:absolute;left:-8px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--primary-grad);box-shadow:0 6px 18px rgba(124,58,237,0.18);border:3px solid #061021}
-    .timeline-item h4{color:var(--text);margin-bottom:6px}
-    .timeline-item p{color:var(--muted);margin-bottom:6px}
-    .tools{color:var(--muted);font-size:0.95rem}
-    /* Projects */
-    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .project{border-radius:12px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:var(--glass-border);transition:transform .28s, box-shadow .28s}
-    .project:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(2,6,23,0.6)}
-    .project h4{margin-bottom:8px;color:var(--text)}
-    /* contact */
-    .contact-card{padding:28px;border-radius:14px;background:var(--card-grad);display:flex;flex-direction:column;gap:12px;border:var(--glass-border);}
-    .input, textarea{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);padding:12px;border-radius:10px;color:var(--text);outline:none}
-    .btn{background:var(--primary-grad);padding:12px 16px;border-radius:10px;color:white;font-weight:700;border:none;cursor:pointer}
-    footer{padding:28px 0;text-align:center;color:var(--muted);opacity:0.95}
-    /* responsive */
-    @media (max-width:1000px){.hero{grid-template-columns:1fr;}.grid-3{grid-template-columns:repeat(2,1fr)}.skill-grid{grid-template-columns:repeat(2,1fr)}.projects-grid{grid-template-columns:repeat(2,1fr)}header{top:12px}}
-    @media (max-width:700px){.grid-3{grid-template-columns:1fr}.hero{padding:18px}.avatar {
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid var(--accent);
-  box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
+
+#skills .card {
+  padding: 24px;
+  text-align: center;
+}
+
+#skills .card h4 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.skills-list {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
-}nav{display:none}}
-    /* subtle animated blobs */
-    .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:0.45;mix-blend-mode:screen;transform:translateZ(0);}
-    .blob.b1{width:420px;height:420px;background:linear-gradient(135deg,#0ea5e9,#7c3aed);left:-120px;top:-60px}
-    .blob.b2{width:320px;height:320px;background:linear-gradient(135deg,#06b6d4,#7c3aed);right:-80px;bottom:-60px}
-    /* small utilities */
-    .muted{color:var(--muted)}
-    .flex{display:flex;gap:12px;align-items:center}
-  
-    @media (max-width: 900px) {
-      .hero.container {
-        flex-direction: column !important;
+}
+
+.skill {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+  transition: all 0.25s ease;
+}
+
+.skill:hover {
+  background: var(--primary-grad);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  #skills .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  #skills .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+    /* ===============================
+       Projects
+    ================================ */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      border-radius: 12px;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: var(--glass-border);
+      transition: transform 0.28s, box-shadow 0.28s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 60px rgba(2,6,23,0.6);
+    }
+
+    .project h4 {
+      text-align: center;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    /* ===============================
+       Contact
+    ================================ */
+    .contact-card {
+      padding: 28px;
+      border-radius: 14px;
+      background: var(--card-grad);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border: var(--glass-border);
+    }
+
+    .input,
+    textarea {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.04);
+      padding: 12px;
+      border-radius: 10px;
+      color: var(--text);
+      outline: none;
+      width: 100%;
+    }
+
+    .btn {
+      background: var(--primary-grad);
+      padding: 12px 16px;
+      border-radius: 10px;
+      color: white;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    footer {
+      padding: 28px 0;
+      text-align: center;
+      color: var(--muted);
+      opacity: 0.95;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 40px;
+    }
+
+    /* ===============================
+       Responsive
+    ================================ */
+    @media (max-width: 1000px) {
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .skill-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      header { top: 12px; }
+    }
+
+    @media (max-width: 700px) {
+      .grid-3 { grid-template-columns: 1fr; }
+      .hero {
+        flex-direction: column;
         text-align: center;
       }
-      .hero.container .hero-graphic {
+      .hero-card {
+        text-align: center;
+        align-items: center;
+      }
+      .hero-graphic {
         order: -1;
         margin-bottom: 20px;
       }
-      .hero.container .hero-card {
-        align-items: center;
-      }
-      .hero.container .hero-card p {
-        max-width: 100%;
-      }
+      nav { display: none; }
     }
 
+    /* ===============================
+       Animated Blobs
+    ================================ */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.45;
+      mix-blend-mode: screen;
+      transform: translateZ(0);
+    }
+/* Glowing gradient section divider */
+.section-divider {
+  width: 80%;
+  height: 4px;
+  margin: 60px auto; /* space around divider */
+  border-radius: 2px;
+  background: linear-gradient(270deg, #0ea5e9, #7c3aed, #14b8a6, #0ea5e9);
+  background-size: 600% 600%;
+  animation: gradientMove 6s ease infinite;
+  box-shadow: 0 0 15px rgba(14,165,233,0.5), 0 0 25px rgba(124,58,237,0.3);
+}
 
-.scroll-arrow {
-  display: inline-block;
-  margin-top: 20px;
-  font-size: 2rem;
-  color: var(--accent);
-  text-decoration: none;
-  animation: bounce 1.5s infinite;
-  transition: transform 0.3s, color 0.3s;
-}
-.scroll-arrow:hover {
-  transform: scale(1.3);
-  color: #000;
-}
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+/* Animate the gradient */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-</style>
+    .blob.b1 {
+      width: 420px;
+      height: 420px;
+      background: linear-gradient(135deg, #0ea5e9, #7c3aed);
+      left: -120px;
+      top: -60px;
+    }
+
+    .blob.b2 {
+      width: 320px;
+      height: 320px;
+      background: linear-gradient(135deg, #06b6d4, #7c3aed);
+      right: -80px;
+      bottom: -60px;
+    }
+  </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="nav-wrap">
       <div class="logo">
@@ -166,231 +467,1039 @@
     </div>
   </header>
 
+  <!-- Background Blobs -->
   <div class="blob b1" aria-hidden="true"></div>
   <div class="blob b2" aria-hidden="true"></div>
 
   <main>
     
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-content" style="display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;width:1100px;max-width:94%;margin:0 auto 20px auto;">
+    <div class="hero-card">
+      <h1>Samuel <span style="color:var(--accent)">Alemayehu</span></h1>
+      <h2 style="font-size:1.4rem;font-weight:700;background:var(--primary-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px">
+        Computer Science · Data Science · AI Enthusiast
+      </h2>
+      <p class="muted hero-desc" style="font-size:1.05rem;line-height:1.8;margin-bottom:20px">
+        Passionate IT professional with strong skills in <strong>software development</strong>, <strong>data analysis</strong>,
+        and <strong>artificial intelligence</strong>. I enjoy building scalable systems and transforming data into meaningful insights
+        while delivering modern digital solutions.
+      </p>
+      <div style="display:flex;gap:14px;align-items:center">
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn" href="#contact" style="background:transparent;border:1px solid rgba(255,255,255,0.1);color:var(--text)">Hire Me</a>
+      </div>
+    </div>
+    <div class="hero-graphic">
+      <div class="avatar">
+        <div class="avatar-glow"></div>
+        <img src="img/Samuel.jpg" alt="Samuel Alemayehu">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Place this between sections -->
+
+
+<style>
+/* Circular Avatar with Glow and Particles */
+.avatar {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  border: 6px solid rgba(14,165,233,0.5);
+  box-shadow: 0 0 20px rgba(14,165,233,0.6), 0 0 40px rgba(124,58,237,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.avatar:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(14,165,233,0.7), 0 0 50px rgba(124,58,237,0.5);
+}
+
+/* Rotating stroke */
+.avatar::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  border-radius: 50%;
+  border: 4px solid transparent;
+  background: conic-gradient(from 0deg, #0ea5e9, #7c3aed, #14b8a6, #0ea5e9);
+  animation: rotateGlow 6s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Floating glow behind avatar */
+.avatar-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(14,165,233,0.3), transparent 60%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: floatGlow 4s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes floatGlow {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -52%) scale(1.05); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Floating particles */
+.avatar::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #0ea5e9;
+  border-radius: 50%;
+  top: 20%;
+  left: 10%;
+  box-shadow:
+    50px 30px #7c3aed,
+    -40px 80px #14b8a6,
+    100px 120px #0ea5e9,
+    -90px -60px #7c3aed;
+  animation: floatParticles 6s linear infinite alternate;
+  z-index: 0;
+}
+
+@keyframes floatParticles {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(8px, -6px); }
+  100% { transform: translate(0, 0); }
+}
+</style>
+
+<style>
+/* Avatar with floating glow and particles */
+.avatar {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  border: 6px solid rgba(14,165,233,0.5);
+  box-shadow: 0 0 20px rgba(14,165,233,0.6), 0 0 40px rgba(124,58,237,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.avatar:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(14,165,233,0.7), 0 0 50px rgba(124,58,237,0.5);
+}
+
+/* Animated rotating stroke */
+.avatar::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  border-radius: 50%;
+  border: 4px solid transparent;
+  background: conic-gradient(from 0deg, #0ea5e9, #7c3aed, #14b8a6, #0ea5e9);
+  animation: rotateGlow 6s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Floating glow behind avatar */
+.avatar-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(14,165,233,0.3), transparent 60%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: floatGlow 4s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes floatGlow {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -52%) scale(1.05); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Optional: small floating particles */
+.avatar::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #0ea5e9;
+  border-radius: 50%;
+  top: 20%;
+  left: 10%;
+  box-shadow:
+    50px 30px #7c3aed,
+    -40px 80px #14b8a6,
+    100px 120px #0ea5e9,
+    -90px -60px #7c3aed;
+  animation: floatParticles 6s linear infinite alternate;
+  z-index: 0;
+}
+
+@keyframes floatParticles {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(8px, -6px); }
+  100% { transform: translate(0, 0); }
+}
+</style>
+
+
+<style>
+/* Remove box, circular avatar with glowing stroke */
+.avatar {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid rgba(14,165,233,0.5);
+  box-shadow: 0 0 20px rgba(14,165,233,0.6), 0 0 40px rgba(124,58,237,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Glowing stroke animation */
+.avatar::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  border-radius: 50%;
+  border: 4px solid transparent;
+  background: conic-gradient(from 0deg, #0ea5e9, #7c3aed, #14b8a6, #0ea5e9);
+  animation: rotateGlow 6s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hover effect */
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(14,165,233,0.7), 0 0 50px rgba(124,58,237,0.5);
+}
+</style>
+
+<style>
+/* Hero Box with Animated Glowing Stroke */
+.hero-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  width: 1100px;
+  max-width: 94%;
+  margin: 0 auto 20px auto;
+  padding: 30px;
+  border-radius: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 30px rgba(14,165,233,0.3);
+  position: relative;
+  overflow: hidden;
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(15px);
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.hero-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #0ea5e9, #7c3aed, #14b8a6, #0ea5e9);
+  animation: glowShift 8s linear infinite, pulseGlow 2.5s ease-in-out infinite alternate;
+  filter: blur(60px);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+/* Gradient Rotation Animation */
+@keyframes glowShift {
+  0% { transform: rotate(0deg) translate(0, 0); }
+  100% { transform: rotate(360deg) translate(0, 0); }
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+  0% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+  100% { opacity: 0.4; }
+}
+
+/* Ensure content stays above the glow */
+.hero-card, .hero-graphic {
+  position: relative;
+  z-index: 1;
+}
+
+/* Adjust hero-card text */
+.hero-card h1, .hero-card h2, .hero-card p {
+  margin: 0 0 12px 0;
+}
+</style>
+
+
+    <!-- About -->
+    <!-- About -->
+<section id="about" class="container">
+  <h2 class="section-title">About Me</h2>
+  <div class="grid-2" style="gap:30px;align-items:start;">
     
+    <!-- Story Card -->
+    <div class="card" style="position:relative;overflow:hidden;">
+      <h3>My Story <i class="fas fa-book-open" style="color:var(--accent);margin-left:6px;"></i></h3>
+      <p class="muted" style="line-height:1.7;">
+        I’m Samuel, a tech enthusiast navigating the worlds of <strong>data</strong>, <strong>AI</strong>, and <strong>software</strong>.  
+        I enjoy turning complex problems into elegant solutions and transforming raw data into actionable insights.  
+        Outside of code, I see the world as a canvas for logic, creativity, and innovation.
+      </p>
+      <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:14px;">
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fas fa-rocket"></i> Innovator</div>
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fas fa-brain"></i> Problem Solver</div>
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fas fa-magic"></i> Creator</div>
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fas fa-lightbulb"></i> Thinker</div>
+      </div>
+    </div>
+
+    <!-- Toolbox Card -->
+    <div class="card" style="position:relative;overflow:hidden;">
+      <h3>My Toolbox <i class="fas fa-tools" style="color:var(--accent);margin-left:6px;"></i></h3>
+      <div style="margin-top:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fab fa-python"></i> Python</div>
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fas fa-cogs"></i> TensorFlow</div>
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fas fa-robot"></i> PyTorch</div>
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fas fa-database"></i> Pandas</div>
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fas fa-chart-line"></i> Scikit-Learn</div>
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fas fa-server"></i> SQL</div>
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fab fa-docker"></i> Docker</div>
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fab fa-linux"></i> Linux</div>
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fab fa-js-square"></i> JavaScript</div>
+        <div class="skill" style="display:flex;align-items:center;gap:6px;"><i class="fab fa-react"></i> React</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Icon-enhanced Skills Hover Animation */
+  #about .skill {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 10px 14px;
+    border-radius: 18px;
+    font-weight: 600;
+    color: var(--muted);
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+
+  #about .skill i {
+    color: var(--accent);
+    transition: transform 0.3s ease;
+  }
+
+  #about .skill:hover {
+    background: var(--primary-grad);
+    color: white;
+    transform: translateY(-4px);
+  }
+
+  #about .skill:hover i {
+    transform: rotate(20deg);
+  }
+
+  #about .card h3 i {
+    font-size: 1.1rem;
+  }
+</style>
+<!-- Skills Section -->
+<section id="skills" class="container">
+  <h2 class="section-title">Skills</h2>
+  <div class="grid-3">
+
+    <!-- Programming & Development -->
+    <div class="card">
+      <h4>Programming & Development</h4>
+      <div class="skills-list">
+        <span class="skill">JavaScript</span>
+        <span class="skill">HTML & CSS</span>
+        <span class="skill">PHP</span>
+        <span class="skill">C# / C++</span>
+        <span class="skill">React</span>
+        <span class="skill">ASP.NET</span>
+      </div>
+    </div>
+
+    <!-- Data Science & AI -->
+    <div class="card">
+      <h4>Data Science & AI</h4>
+      <div class="skills-list">
+        <span class="skill">Python</span>
+        <span class="skill">TensorFlow</span>
+        <span class="skill">PyTorch</span>
+        <span class="skill">Pandas</span>
+        <span class="skill">Scikit-Learn</span>
+        <span class="skill">SQL</span>
+      </div>
+    </div>
+
+    <!-- Systems & Administration -->
+    <div class="card">
+      <h4>Systems & Administration</h4>
+      <div class="skills-list">
+        <span class="skill">Linux</span>
+        <span class="skill">Docker</span>
+        <span class="skill">Networking</span>
+        <span class="skill">System Administration</span>
+        <span class="skill">Project Management</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* Skills Section Styling */
+#skills .grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 30px;
+}
+
+#skills .card {
+  padding: 24px;
+  text-align: center;
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 30px rgba(3,8,23,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#skills .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(14,165,233,0.6);
+}
+
+#skills .card h4 {
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.skill {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+  transition: all 0.25s ease;
+}
+
+.skill:hover {
+  background: var(--primary-grad);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  #skills .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  #skills .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+
+    <!-- Experience -->
+   <!-- Experience -->
+<section id="experience" class="container">
+  <h2 class="section-title">Experience</h2>
+  <div class="timeline">
     
-    <section class="hero container" id="home" style="display:flex;align-items:center;gap:40px">
-      <div class="hero-card" style="flex:1;display:flex;flex-direction:column;justify-content:center">
-        <h1 style="font-size:3.2rem;font-weight:800;color:var(--text);margin-bottom:10px">Samuel <span style="color:var(--accent)">Alemayehu</span></h1>
-        <h2 style="font-size:1.4rem;font-weight:700;background:var(--primary-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px">
-          Computer Science · Data Science · AI Enthusiast
-        </h2>
-        <p class="muted" style="font-size:1.05rem;line-height:1.8;margin-bottom:20px">
-          Passionate IT professional with strong skills in <strong>software development</strong>, <strong>data analysis</strong>, and <strong>artificial intelligence</strong>. 
-          I enjoy building scalable systems and transforming data into meaningful insights while delivering modern digital solutions.
-        </p>
-        <div style="display:flex;gap:14px;align-items:center">
-          
-          
+    <div class="timeline-item">
+      <div class="timeline-icon">📊</div>
+      <div class="timeline-content">
+        <h4>Data Analyst — Insights & Visualization</h4>
+        <p class="muted">Performed exploratory data analysis (EDA) on large datasets to extract actionable insights; built interactive dashboards and reports.</p>
+        <div class="tools muted">Python, Pandas, Matplotlib, Seaborn, Plotly, SQL</div>
+        <span class="timeline-date">2023 – Present</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-icon">💻</div>
+      <div class="timeline-content">
+        <h4>Full-Stack Developer</h4>
+        <p class="muted">Developed front-end and back-end applications; delivered responsive and scalable web solutions.</p>
+        <div class="tools muted">ASP.NET, React, JavaScript, PHP</div>
+        <span class="timeline-date">2021 – Present</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-icon">🤖</div>
+      <div class="timeline-content">
+        <h4>Automation & Bot Developer</h4>
+        <p class="muted">Built automated Telegram bots and scripts to streamline workflows and enhance engagement.</p>
+        <div class="tools muted">Python, Telegram API</div>
+        <span class="timeline-date">2024 – Present</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-icon">🎨</div>
+      <div class="timeline-content">
+        <h4>Web & Graphics Designer</h4>
+        <p class="muted">Designed and deployed websites and branding assets for organizations and individuals.</p>
+        <div class="tools muted">Figma, HTML/CSS, Illustrator</div>
+        <span class="timeline-date">2022 – 2025</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Timeline Layout */
+  .timeline {
+    position: relative;
+    margin: 40px 0;
+    padding-left: 20px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 60px;
+  }
+
+  .timeline-icon {
+    position: absolute;
+    left: -6px;
+    top: 0;
+    background: var(--primary-grad);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow);
+  }
+
+  .timeline-content {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 18px;
+    border: var(--glass-border);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .timeline-content:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(2,6,23,0.6);
+  }
+
+  .timeline-content h4 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+  }
+
+  .timeline-content p.muted {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .timeline-content .tools {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .timeline-date {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .timeline {
+      padding-left: 10px;
+    }
+    .timeline-item {
+      padding-left: 50px;
+    }
+    .timeline-icon {
+      left: -10px;
+    }
+  }
+</style>
+
+
+<style>
+  /* Experience Section: Equal Height Cards */
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+
+  .experience-grid .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* ensures tools section stays at bottom */
+    min-height: 220px; /* adjust as needed */
+    padding: 20px;
+    border-radius: var(--radius);
+    background: var(--surface);
+    border: var(--glass-border);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s;
+  }
+
+  .experience-grid .card:hover {
+    transform: translateY(-4px);
+  }
+
+  .experience-grid .card h4 {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+  }
+
+  .experience-grid .card .tools {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+</style>
+
+
+    <!-- Projects -->
+    <!-- Projects -->
+<!-- Projects Showcase -->
+<section id="projects" class="container">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-showcase">
+
+    <div class="projects-grid">
+
+      <div class="project">
+        <div class="project-screenshot">
+          <img src="img/telegram-bot.JPG" alt="Automated Telegram Bot">
         </div>
+        <h4>Automated Telegram Bot</h4>
+        <p class="muted">Built an automated Telegram bot to handle user requests and task scheduling using Python.</p>
+        <div class="tools muted">Python, Telegram API</div>
       </div>
 
-      <div class="hero-graphic" style="flex:1;display:flex;justify-content:center">
-        <div class="avatar card">
-          <img src="img/Samuel.jpg" alt="Samuel Alemayehu">
+      <div class="project">
+        <div class="project-screenshot">
+          <img src="img/portfolio.JPG" alt="Portfolio Website">
         </div>
+        <h4>Portfolio Website</h4>
+        <p class="muted">Designed and developed responsive personal portfolio showcasing skills, projects, and contact methods.</p>
+        <div class="tools muted">HTML, CSS, JavaScript, React</div>
       </div>
-    </section>
 
-
-
-
-    <section id="about" class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Who I Am</h3>
-          <p class="muted">I combine a robust computer science background with practical experience in software engineering, data analytics, and systems administration. I focus on transforming data into actionable products, building resilient applications, and automating workflows to save time and reduce error.</p>
-          <div style="margin-top:12px" class="flex">
-            <div class="muted"><i class="fas fa-check-circle"></i> Problem Solving</div>
-            <div class="muted"><i class="fas fa-check-circle"></i> Scalable Systems</div>
-            <div class="muted"><i class="fas fa-check-circle"></i> Clean Code</div>
-          </div>
+      <div class="project">
+        <div class="project-screenshot">
+          <img src="img/data-dashboard.jpg" alt="Data Analysis Dashboard">
         </div>
-        <div class="card">
-          <h3>Tools & Technologies</h3>
-          <div style="margin-top:12px" class="skill-grid">
-            <div class="skill">Python</div><div class="skill">TensorFlow</div><div class="skill">PyTorch</div><div class="skill">Pandas</div>
-            <div class="skill">Scikit-Learn</div><div class="skill">SQL</div><div class="skill">Docker</div><div class="skill">Linux</div>
-          </div>
-        </div>
+        <h4>Data Analysis Dashboard</h4>
+        <p class="muted">Developed Python-based scripts and dashboards to analyze and visualize business datasets.</p>
+        <div class="tools muted">Python, Pandas, Matplotlib, Plotly</div>
       </div>
-    </section>
 
-    
-    
-    <section id="skills" class="container">
-      <h2 class="section-title">Skills</h2>
-      <div class="card" style="padding:20px">
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
-          
-          <div>
-            <h4 style="margin-bottom:12px;text-align:center">Programming & Development</h4>
-            <div class="skill-grid" style="grid-template-columns:repeat(2,1fr)">
-              <div class="skill">JavaScript</div>
-              <div class="skill">HTML & CSS</div>
-              <div class="skill">PHP</div>
-              <div class="skill">C# / C++</div>
-              <div class="skill">React</div>
-              <div class="skill">ASP.NET</div>
-            </div>
-          </div>
-
-          <div>
-            <h4 style="margin-bottom:12px;text-align:center">Data Science & AI</h4>
-            <div class="skill-grid" style="grid-template-columns:repeat(2,1fr)">
-              <div class="skill">Data Analysis</div>
-              <div class="skill">Machine Learning</div>
-              <div class="skill">Deep Learning</div>
-              <div class="skill">NLP</div>
-              <div class="skill">Computer Vision</div>
-              <div class="skill">TensorFlow / PyTorch</div>
-            </div>
-          </div>
-
-          <div>
-            <h4 style="margin-bottom:12px;text-align:center">Systems & Administration</h4>
-            <div class="skill-grid" style="grid-template-columns:repeat(2,1fr)">
-              <div class="skill">System Administration</div>
-              <div class="skill">Project Management</div>
-              <div class="skill">Networking</div>
-              <div class="skill">Linux / Windows Server</div>
-              <div class="skill">Communication</div>
-              <div class="skill">Research</div>
-            </div>
-          </div>
-
+      <div class="project">
+        <div class="project-screenshot">
+          <img src="img/jerseyshop.JPG" alt="JerseyShop">
         </div>
+        <h4>JerseyShop</h4>
+        <p class="muted">Created a fully functional E-commerce site for sports jerseys, featuring shopping cart, product catalog, and checkout system.</p>
+        <div class="tools muted">HTML, CSS, JavaScript, PHP, MySQL</div>
       </div>
-    </section>
 
-
-
-    
-    <section id="experience" class="container">
-      <h2 class="section-title">Experience</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h4>📊 Data Analyst — Insights & Visualization</h4>
-          <p class="muted">Performed exploratory data analysis (EDA) on large datasets to extract actionable insights; built interactive dashboards and reports.</p>
-          <div class="tools muted">Python, Pandas, Matplotlib, Seaborn, Plotly, SQL</div>
+      <div class="project">
+        <div class="project-screenshot">
+          <img src="img/coffeehub.jpg" alt="CoffeeHub">
         </div>
-        <div class="card">
-          <h4>📈 Data Visualization Developer</h4>
-          <p class="muted">Designed dashboards and reports for operational and executive audiences; transformed complex data into clear visual narratives.</p>
-          <div class="tools muted">Power BI, Tableau, D3.js, Plotly Dash</div>
-        </div>
-        <div class="card">
-          <h4>💻 Full-Stack Developer</h4>
-          <p class="muted">Developed front-end and back-end applications; delivered responsive and scalable web solutions.</p>
-          <div class="tools muted">ASP.NET, React, JavaScript, PHP</div>
-        </div>
-        <div class="card">
-          <h4>🔄 Website Migration Engineer</h4>
-          <p class="muted">Migrated an existing website from SQL Membership to ASP.NET; improved authentication and security.</p>
-          <div class="tools muted">SQL, ASP.NET, IIS</div>
-        </div>
-        <div class="card">
-          <h4>🤖 Automation & Bot Developer</h4>
-          <p class="muted">Built automated Telegram bots and scripts to streamline workflows and enhance engagement.</p>
-          <div class="tools muted">Python, Telegram API</div>
-        </div>
-        <div class="card">
-          <h4>🎨 Web & Graphics Designer</h4>
-          <p class="muted">Designed and deployed websites and branding assets for organizations and individuals.</p>
-          <div class="tools muted">Figma, HTML/CSS, Illustrator</div>
-        </div>
-        <div class="card">
-          <h4>⚙️ Systems Administrator</h4>
-          <p class="muted">Configured and maintained servers, networks, and IT infrastructure to ensure security and uptime.</p>
-          <div class="tools muted">Linux, Windows Server, Docker</div>
-        </div>
-        <div class="card">
-          <h4>🛠️ IT Operations & Management</h4>
-          <p class="muted">Handled user accounts, backups, monitoring, and team coordination for smooth IT operations.</p>
-          <div class="tools muted">Nagios, Prometheus, Jira</div>
-        </div>
+        <h4>CoffeeHub</h4>
+        <p class="muted">Built a fully functional CoffeeShop website showcasing menu, online ordering, and responsive design.</p>
+        <div class="tools muted">HTML, CSS, JavaScript, PHP, MySQL</div>
       </div>
-    </section>
 
-
-    <section id="projects" class="container">
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-grid">
-        <div class="project">
-          <h4>Automated Telegram Bot</h4>
-          <p class="muted">Built an automated Telegram bot to handle user requests and task scheduling using Python.</p>
+      <div class="project">
+        <div class="project-screenshot">
+          <img src="img/graphics-portfolio.jpg" alt="Creative Graphics Design Portfolio">
         </div>
-        <div class="project">
-          <h4>Portfolio Website</h4>
-          <p class="muted">Designed and developed responsive personal portfolio showcasing skills, projects and contact methods.</p>
-        </div>
-        <div class="project">
-          <h4>Data Analysis Dashboard</h4>
-          <p class="muted">Developed Python-based scripts and dashboards to analyze and visualize business datasets.</p>
-        </div>
+        <h4>Creative Graphics Design Portfolio</h4>
+        <p class="muted">Designed logos, banners, social media visuals, and branding materials for personal and client projects.</p>
+        <div class="tools muted">Figma, Adobe Illustrator, Photoshop, Canva</div>
       </div>
-    </section>
 
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Big Projects Showcase Box */
+  .projects-showcase {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 20px;
+    border: var(--glass-border);
+    box-shadow: 0 20px 50px rgba(2,6,23,0.6);
+    margin-top: 20px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .project {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 16px;
+    border: var(--glass-border);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .project:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(2,6,23,0.6);
+  }
+
+  .project-screenshot {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+
+  .project-screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .project-screenshot img:hover {
+    transform: scale(1.05);
+  }
+
+  .project h4 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+  }
+
+  .project p.muted {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .project .tools {
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+</style>
+
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .project {
+    background: var(--surface);
+    border: var(--glass-border);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .project:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(2,6,23,0.6);
+  }
+
+  .project-screenshot {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+
+  .project-screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .project-screenshot img:hover {
+    transform: scale(1.05);
+  }
+
+  .project h4 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+  }
+
+  .project p.muted {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .project .tools {
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+</style>
+
+
+<style>
+  /* Projects Section: Tools styling like Experience */
+  .projects-grid .tools {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: left;
+  }
+</style>
+
+
+
+    <!-- Certifications -->
     <section id="certifications" class="container">
       <h2 class="section-title">Certifications</h2>
       <div class="grid-3">
-        <div class="card">
-          <h4>DOT Ethiopia</h4>
-          <p class="muted">Training in Entrepreneurial Mindset, Communication, Teamwork, Decision-Making, and Digital Skills</p>
-        </div>
-        <div class="card">
-          <h4>Fundamentals of Data Science</h4>
-          <p class="muted">Data Science and Data Analysis fundamentals covering Python and statistical methods</p>
-        </div>
-        <div class="card">
-          <h4>Fundamentals of Artificial Intelligence — Udacity</h4>
-          <p class="muted">Introductory coursework in AI concepts and machine learning basics</p>
-        </div>
+        <div class="card"><h4>DOT Ethiopia</h4><p class="muted">Training in Entrepreneurial Mindset, Communication, Teamwork, Decision-Making, and Digital Skills</p></div>
+        <div class="card"><h4>Fundamentals of Data Science</h4><p class="muted">Data Science and Data Analysis fundamentals covering Python and statistical methods</p></div>
+        <div class="card"><h4>Fundamentals of Artificial Intelligence — Udacity</h4><p class="muted">Introductory coursework in AI concepts and machine learning basics</p></div>
       </div>
     </section>
 
-    <section id="languages" class="container">
-      <h2 class="section-title">Languages</h2>
-      <div class="card grid-3" style="padding:18px;align-items:center">
-        <div>
-          <h4>Amharic</h4>
-          <p class="muted">Native</p>
-        </div>
-        <div>
-          <h4>English</h4>
-          <p class="muted">Fluent</p>
-        </div>
-        <div>
-          <h4>Technical</h4>
-          <p class="muted">Documentation, Reports, Presentations</p>
-        </div>
-      </div>
-    </section>
+    <!-- Languages -->
+    <!-- Languages -->
+<section id="languages" class="container">
+  <h2 class="section-title">Languages</h2>
+  <div class="card grid-3" style="padding:18px; display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:20px; align-items:center; text-align:center;">
+    
+    <div>
+      <h4>Amharic</h4>
+      <p class="muted">Native</p>
+    </div>
+    
+    <div>
+      <h4>English</h4>
+      <p class="muted">Fluent</p>
+    </div>
+    
+    <div>
+      <h4>Technical</h4>
+      <p class="muted">Documentation, Reports, Presentations</p>
+    </div>
+    
+  </div>
+</section>
 
-    <section id="education" class="container">
-      <h2 class="section-title">Education</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h4>Bachelor of Science in Computer Science (2016 – 2020)</h4>
-          <p class="muted">Admas University, Addis Ababa</p>
-        </div>
-        <div class="card">
-          <h4>Bole Senior Secondary School (2013 – 2015)</h4>
-        </div>
-      </div>
-    </section>
+<style>
+  #languages .card h4 {
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+  }
 
+  #languages .card p.muted {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  /* Ensure all columns are aligned and equal height */
+  #languages .card > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
+
+
+    <!-- Education -->
+    <!-- Education -->
+<section id="education" class="container">
+  <h2 class="section-title">Education</h2>
+  <div class="education-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px;">
+    
+    <div class="card edu-card">
+      <h4>Bachelor of Science in Computer Science</h4>
+      <p class="muted" style="margin-bottom:6px;">2016 – 2020</p>
+      <p class="muted">Admas University, Addis Ababa</p>
+    </div>
+    
+    <div class="card edu-card">
+      <h4>Bole Senior Secondary School</h4>
+      <p class="muted" style="margin-bottom:6px;">2013 – 2015</p>
+      <p class="muted">Addis Ababa, Ethiopia</p>
+    </div>
+    
+  </div>
+</section>
+
+<style>
+  /* Education Section Styling */
+  .education-grid .edu-card {
+    background: var(--surface);
+    border: var(--glass-border);
+    border-radius: var(--radius);
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .education-grid .edu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(2,6,23,0.6);
+  }
+
+  .education-grid .edu-card h4 {
+    margin-bottom: 6px;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  .education-grid .edu-card p.muted {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin: 0;
+  }
+</style>
+
+
+    <!-- Contact -->
     <section id="contact" class="container">
       <h2 class="section-title">Contact</h2>
       <div class="grid-2">
         <div class="contact-card">
           <h4>Send a message</h4>
-          <p class="muted">I’m open to new opportunities and collaborations. Drop a message and I’ll reply as soon as possible.</p>
+          <p class="muted">
+            I’m open to new opportunities and collaborations.
+            Drop a message and I’ll reply as soon as possible.
+          </p>
           <input class="input" placeholder="Your name" />
           <input class="input" placeholder="Your email" />
           <textarea class="input" placeholder="Your message" rows="5"></textarea>
@@ -399,38 +1508,42 @@
             <button class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06)">Download CV</button>
           </div>
         </div>
+        <div
         <div class="card">
           <h4>Contact details</h4>
           <div style="margin-top:12px" class="muted flex"><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</div>
           <div style="margin-top:8px" class="muted flex"><i class="fas fa-phone"></i> +251 904 577804</div>
           <div style="margin-top:8px" class="muted flex"><i class="fas fa-envelope"></i> samred221b@gmail.com</div>
           <div style="margin-top:12px" class="flex">
-            <a class="muted" href="https://github.com" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-            <a class="muted" href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a class="muted" href="https://github.com/samred221b/" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+         <a class="muted" href="https://t.me/sonoftheimmortal" target="_blank">
+    <i class="fab fa-telegram fa-2x"></i>
           </div>
         </div>
       </div>
     </section>
-
-    <footer>
-      © 2025 Samuel Alemayehu
-    </footer>
   </main>
 
+  <!-- Footer -->
+  <footer>
+    © 2025 Samuel Alemayehu
+  </footer>
+
+  <!-- Scripts -->
   <script>
-    // Smooth scroll for header nav and hero button
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
+    // Smooth scroll for header nav
+    document.querySelectorAll('nav a').forEach(a => {
+      a.addEventListener('click', e => {
         e.preventDefault();
-        document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+        document.querySelector(a.getAttribute('href'))
+          .scrollIntoView({ behavior: 'smooth' });
       });
     });
+
     // Simple send button alert (placeholder for real form handling)
-    document.querySelector('.btn').addEventListener('click', ()=>{
+    document.querySelector('.btn').addEventListener('click', () => {
       alert('Thanks — message functionality is a placeholder in this demo.');
     });
   </script>
-
-
 </body>
 </html>
